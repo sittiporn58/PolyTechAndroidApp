@@ -31,9 +31,11 @@ class ContactFragment : Fragment(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        //val sydney = LatLng(-34.0, 151.0)
+        val sydney = LatLng(18.813382, 98.992284)
+        mMap.addMarker(MarkerOptions().position(sydney).title("วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 16.0f))
     }
 
     // TODO: Rename and change types of parameters
