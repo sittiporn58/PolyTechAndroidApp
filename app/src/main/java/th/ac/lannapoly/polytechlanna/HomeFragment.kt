@@ -94,7 +94,7 @@ class HomeFragment : Fragment() {
 
         listView.setOnItemClickListener{parent,virew,position,id ->
             val news = adapter.getItem(position)
-            Toast.makeText(context, news.imgUrl, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, news.imgUrl, Toast.LENGTH_SHORT).show()
             FinestWebView.Builder(activity!!).show(news.url!!)
 
         }
