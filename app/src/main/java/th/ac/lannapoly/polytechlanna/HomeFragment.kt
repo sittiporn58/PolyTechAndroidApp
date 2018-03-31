@@ -8,13 +8,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import com.bumptech.glide.Glide
 import com.firebase.ui.database.FirebaseListAdapter
 import com.google.firebase.database.*
+import com.thefinestartist.finestwebview.FinestWebView
 import kotlinx.android.synthetic.main.fragment_home.*
 import th.ac.lannapoly.polytechlanna.model.News
 
@@ -94,7 +92,12 @@ class HomeFragment : Fragment() {
 
         listView.adapter = adapter
 
+        listView.setOnItemClickListener{parent,virew,position,id ->
+            val news = adapter.getItem(position)
+            Toast.makeText(context, news.imgUrl, Toast.LENGTH_SHORT).show()
+            FinestWebView.Builder(activity!!).show(news.url!!)
 
+        }
 
 
 //        button.setOnClickListener{
